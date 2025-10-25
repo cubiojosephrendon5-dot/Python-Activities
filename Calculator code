@@ -1,12 +1,18 @@
 def addition(num1, num2):
+    num1 = float(num1)
+    num2 = float(num2)
     print(f'The sum of {num1} and {num2} is {num1 + num2}')
     return num1 + num2
 
 def subtraction(num1, num2):
+    num1 = float(num1)
+    num2 = float(num2)
     print(f'The difference of {num1} and {num2} is {num1 - num2}')
     return num1 - num2
 
 def multiplication(num1, num2):
+    num1 = float(num1)
+    num2 = float(num2)
     print(f'The product of {num1} and {num2} is {num1 * num2}')
     return num1 * num2
 
@@ -14,15 +20,29 @@ def division(num1, num2):
     if num2 == 0:
         return "Error: Division by zero is not allowed."
     else:
-        print(f'The quotient of {num1} and {num2} is {num1 / num2}')
+     num1 = float(num1)
+     num2 = float(num2)    
+    print(f'The quotient of {num1} and {num2} is {num1 / num2}')
     return num1 / num2
 
-num1 = float(input('Enter first number: '))
+num1 = input('Enter first number: ')
 
-num2 = float(input('Enter second number: '))
+while num1 == '':
+    print('You did not enter a number, please try again.')
+    num1 = input('Enter first number: ')
+    
+num2 = input('Enter second number: ')
+
+while num2 == '':
+    print('You did not enter a number, please try again.')
+    num2 = input('Enter first number: ')
 
 operators = input('Select an operator [+,-,*,/]: ')
 
+while operators == '':
+    print('You did not enter a valid operator, please try again.')
+    operators = input('Select an operator [+,-,*,/]: ')
+    
 match operators:
     case '+':
         addition(num1, num2)    
